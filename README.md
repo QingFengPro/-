@@ -1,4 +1,157 @@
-# 微博热点话题情感分析系统 - 小组作业计划
+# 📊 微博情感分析系统
+
+**简化版本** - 核心功能完整，开箱即用
+
+---
+
+## 🎯 一句话介绍
+
+从 Excel 读取微博评论 → 情感分析 → Web 页面展示
+
+---
+
+## 🚀 2分钟快速开始
+
+### 1️⃣ 启动后端
+
+```bash
+cd backend
+pip install -r requirements.txt
+python app.py
+```
+
+✅ 后端运行在 `http://localhost:8000`
+
+### 2️⃣ 启动前端（新终端）
+
+```bash
+cd frontend
+npm install
+npm run dev
+```
+
+✅ 前端运行在 `http://localhost:5173`
+
+---
+
+## 📁 项目结构（简化）
+
+```
+├── backend/
+│   ├── app.py           ⭐ 主程序（直接运行）
+│   ├── models.py        数据模型
+│   ├── data_loader.py   Excel 导入
+│   ├── .env            配置文件
+│   └── requirements.txt 依赖列表
+├── frontend/
+│   └── src/
+│       ├── pages/      页面（首页/分析/评论）
+│       └── api/        API 调用
+├── START_GUIDE.md      📚 完整启动指南
+└── README.md          本文件
+```
+
+---
+
+## ✨ 功能演示
+
+### 三个核心页面
+
+| 页面 | 路由 | 功能 |
+|------|------|------|
+| **首页** | `/` | 📊 统计卡片、情感分布、平均分值 |
+| **分析** | `/analysis` | 📈 分析报告、样本展示、趋势图 |
+| **评论** | `/comments` | 💬 完整列表、筛选、删除 |
+
+---
+
+## 🔗 核心 API
+
+```
+GET  /api/stats              → 统计数据
+GET  /api/comments           → 评论列表
+POST /api/comments           → 添加评论
+DEL  /api/comments/{id}      → 删除评论
+```
+
+**完整文档:** http://localhost:8000/docs
+
+---
+
+## 📊 数据流
+
+```
+Excel 文件 (评论与情感.xlsx)
+    ↓
+[后端自动导入]
+    ↓
+SQLite 数据库
+    ↓
+FastAPI 接口
+    ↓
+Vue 3 前端展示
+```
+
+---
+
+## 🔧 配置
+
+**数据源路径** - 修改 `backend/.env`
+
+```env
+DATA_FILE_PATH=C:\Users\asus\Desktop\评论与情感.xlsx
+```
+
+---
+
+## 💡 关键特性
+
+- ✅ **自动导入** - 启动时自动加载 Excel 数据
+- ✅ **实时统计** - 情感分布、正负中立比例
+- ✅ **简洁 UI** - 现代化设计，无第三方 UI 库依赖
+- ✅ **快速 API** - 6 个核心接口，满足基本需求
+
+---
+
+## 🎓 学习价值
+
+```python
+# 学习点
+- FastAPI 快速构建 API
+- SQLAlchemy ORM 数据库操作
+- Vue 3 组合式 API
+- Excel 数据导入处理
+- 跨域 CORS 配置
+```
+
+---
+
+## 📖 详细指南
+
+👉 **[完整启动指南 →](START_GUIDE.md)**
+
+---
+
+## 🆘 常见问题
+
+| 问题 | 答案 |
+|------|------|
+| 后端启动失败？ | 检查 `python --version` (需 3.8+) |
+| 数据未导入？ | 检查 Excel 路径是否正确 |
+| 前端显示错误？ | 打开浏览器控制台 F12 查看错误 |
+| npm 安装卡住？ | 试试 `npm install --legacy-peer-deps` |
+
+---
+
+## 📚 技术栈
+
+**后端**: FastAPI, SQLAlchemy, Pandas  
+**前端**: Vue 3, Vite, Axios  
+**数据**: SQLite, Excel  
+
+---
+
+**Made with ❤️ | 2025**
 
 ## 项目概述
 
